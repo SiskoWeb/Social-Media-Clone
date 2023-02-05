@@ -1,0 +1,10 @@
+@use "../../Variables" as * ;
+
+.sidebar{
+    flex-basis: 15%;
+    background-color: $element-Color;
+    height: 500px;
+    width: 100%;
+    border-radius: 15px;
+
+}

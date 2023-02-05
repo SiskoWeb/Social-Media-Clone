@@ -1,0 +1,46 @@
+.profil-card{
+height: 200px;
+border-radius: 15px;
+width: 100%;
+background-color: white;
+    .profil-text{
+        background-color: white;
+        height: 80px;
+        border-radius: 15px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        .text-info{
+            position: absolute;
+      
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            p{
+                font-family: 'Source Sans Pro', sans-serif;
+                font-weight: 900;
+                
+                        }
+                        .userid{
+                            font-weight: 400;
+                        }
+        }
+       
+    }
+    .cover-profil{
+        border-radius: 15px;
+        img{
+            height: 120px;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .avatar-profil{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top:-65%;
+    left: 5%;
+   }
+}

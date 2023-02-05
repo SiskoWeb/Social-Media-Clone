@@ -1,0 +1,121 @@
+@use "../../Variables" as * ;
+
+.feed-card{
+display: flex;
+
+row-gap: 20px;
+border-radius: 15px;
+flex-direction: column;
+   width: 100%;
+    background-color: $element-Color;
+    padding: 20px;
+    .autor{
+        display: flex;
+        align-items: center;
+        color: black;
+        column-gap: 10px;
+        
+        img{
+            @include avatar
+           }
+    }
+img{
+    border-radius: 15px;
+    max-width: 100%;
+}
+}
+.feed-col1{
+
+    display: flex;
+    align-items: center;
+justify-content: space-between;
+color: black;
+a{
+    cursor: pointer;
+}
+}
+.dropbtn{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: red;
+    cursor: pointer;
+    button{
+   
+    }
+
+ 
+}
+
+.toggle{
+font-family: 'Source Sans Pro', sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.5s linear;
+    color: black;
+button{
+    font-size: 20px;
+    border-color: transparent;
+    outline-color: transparent;
+    background-color: $element-Color;
+    cursor: pointer;
+    transition: all 0.5s linear;
+   border-radius: 50%;
+
+
+}
+button:hover{
+    background-color: rgb(188, 188, 188);
+}
+    ul{
+        box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.14);
+        -webkit-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.14);
+        -moz-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.14);
+        border-radius: 10px;
+     
+
+        cursor: pointer;
+        top: 10px;
+        right: 20%;
+        margin-top: 20px;
+        font-size: 10px;
+        position: absolute;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+      transition: all 0.5s linear;
+   
+    }
+    li{
+        color: black;
+        border-radius: 10px;
+        padding: 5px 10px;
+        transition: all 0.3s linear;
+font-family: 'Source Sans Pro', sans-serif;
+font-weight: 700;
+    }
+    li:hover{
+        color: rgb(207, 15, 15);
+        background-color: rgb(188, 188, 188);
+
+    }
+}
+.btns-reaction{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+div{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+i:hover{
+    cursor: pointer;
+    color: red;
+
+}
+    }

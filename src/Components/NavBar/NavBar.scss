@@ -1,0 +1,61 @@
+@use "../../Variables" as * ;
+
+nav{
+    position: relative;
+margin-bottom: 50px;
+display: flex;
+align-items: center;
+justify-content: space-around;
+height: 70px;
+font-family: 'Source Sans Pro', sans-serif;
+background-color: $element-Color;
+.input-search{
+    background-color: $bg-Color;
+
+ 
+    height: 50px;
+    border-radius: 20px;
+
+display: flex;
+align-items: center;
+column-gap: 20px;
+padding: 20px ;
+  width: calc(100% - 70%);
+
+    input{
+        border: none;
+    
+        background-color: $bg-Color;
+       
+    }
+    input:focus{
+        border: none;
+        outline: none;
+   
+    }
+
+}
+}
+
+
+.btn-and-avatar{
+display: flex;
+align-items: center;
+column-gap: 20px;
+        
+    img{
+        width: 45px;
+        border-radius: 50%;
+    }
+
+    button{
+        @include btn-create(10px,30px);
+      
+        height: 100% !important;
+    
+        
+    }
+}
+
+
+

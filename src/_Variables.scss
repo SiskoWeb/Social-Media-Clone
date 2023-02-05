@@ -1,0 +1,31 @@
+
+
+
+    $bg-Color:#f0edf5;
+    $btn-Color:#6a4adf;
+    $element-Color:#ffffff;
+    $font-Color:#000;
+    $fontTwo-Color:#92908d;
+
+    
+
+ 
+
+
+    @mixin btn-create($hp,$wp){
+ 
+
+background-color: $btn-Color;
+color: white;
+border: none;
+padding: $hp $wp;
+border-radius: 15px;
+cursor:pointer;
+    }
+
+    @mixin avatar(){
+ 
+        width: 40px;
+        border-radius: 50%;
+          
+            }

@@ -1,0 +1,87 @@
+@use "../../Variables" as * ;
+.add-post{
+    background-color: $element-Color;
+    border-radius: 15px;
+}
+
+.create-post{
+ 
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    align-items: center;
+    padding: 10px 15px;
+    column-gap: 10px;
+    background-color: $element-Color;
+    input:focus , input{
+width: 100%;
+        outline: none;
+        border: none;
+    }
+    img{
+        @include avatar
+    }
+    .create-btn{
+        background-color: $btn-Color;
+        color: white;
+        border: none;
+        padding:10px 30px;
+        border-radius: 15px;
+        height: 100%;
+        cursor:pointer;
+        }
+    
+}
+
+
+
+
+.create-item1{
+    display: flex;
+    align-items: center;
+   
+    width: 100%;
+    column-gap: 10px;
+}
+
+.img-upload{
+    display: none;
+}
+.input-image{
+    cursor: pointer;
+}
+
+.img-for-uploading{
+    position: relative;
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    img{
+     
+        border-radius: 15px;
+        width: 100%;
+        max-height: 700px;
+        object-fit: cover;
+       
+    }
+   
+}
+
+.remove-uploaded-image{
+    position: absolute;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   color: white;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    
+    top: 5%;
+    left: 5%;
+    cursor: pointer;
+}

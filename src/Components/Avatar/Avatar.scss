@@ -1,0 +1,19 @@
+@use "../../Variables" as * ;
+
+.autor{
+   
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    img{
+        @include avatar
+       }
+       p{
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 900;
+        span{
+            font-weight: 300;
+            font-size: 12px;
+        }
+       }
+}
