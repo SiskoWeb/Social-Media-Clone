@@ -3,29 +3,34 @@ import { useSelector ,useDispatch } from 'react-redux'
 import {provider} from '../../firebase/firebase-config'
 import { getAuth, signInWithPopup, GoogleAuthProvider ,signOut } from "firebase/auth";
 import { useEffect ,useState } from 'react'
-import { AddUserToDB} from '../../Redux/Actions/PostesAction'
+
 import './Login.scss'
 import { collection, addDoc, Timestamp,getDocs ,arrayUnion, updateDoc } from "firebase/firestore"; 
 import { auth, db, storage } from "../../firebase/firebase-config"
 export default function Login() {
-    const Auth = useSelector(state => state.Login.isAuth)
-  
-    const [ilogin ,setIsLogin] =useState(Auth)
-    const Dispatch = useDispatch()
 
+
+    const Auth = useSelector(state => state.Login.isAuth)
+   const [ilogin ,setIsLogin] =useState(Auth)
+    const Dispatch = useDispatch()
+        
+    useEffect(()=>{
+    
+      setIsLogin(localStorage.getItem('isAuth'))
+
+    },[])
 
     
         const login= async(e)  =>  {
             e.preventDefault();
+            //check if user ar login
             const auth = getAuth();
+
+                   //function to login
             signInWithPopup(auth, provider)
               .then(async(result) => {
-          
-        
-              
-       
-           
-                // This gives you a Google Access Token. You can use it to access the Google API.
+
+                 // This gives you a Google Access Token. You can use it to access the Google API.
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
                 // The signed-in user info.
@@ -36,6 +41,8 @@ export default function Login() {
                
                 localStorage.setItem('name',user.displayName)
                 localStorage.setItem('name',user.uid)
+
+
                 Dispatch({
                   type:"INFO",
                   payload:{
@@ -46,8 +53,10 @@ export default function Login() {
                    userID:user.uid
                   }
                 })
-             await Promise.all(
 
+
+
+             await Promise.all(
                await addDoc(collection(db, "Users" ,  `${user.email}`,`${user.email}` ), {
 
                 Email: user.email,
@@ -57,12 +66,8 @@ export default function Login() {
               test:"testo2"  })
              )
               
-              
-              
+         
              
-                // location.reload(); 
-                
-                // ...
               }).catch((error) => {
                 // Handle Errors here.
                 console.log(`false login`)
@@ -77,14 +82,12 @@ export default function Login() {
               });
           
           }
-         
-          useEffect(()=>{
-    
-            setIsLogin(localStorage.getItem('isAuth'))
-    
-          },[])
+
+ 
+
   return (
     <div className='login'>Don’t miss what’s happening
-    People on Twitter are the first to know.<a onClick={(e)=>login(e)}>Login</a></div>
+    People on Twitter are the first to know.
+    <a onClick={(e)=>login(e)}>Login</a></div>
   )
 }

@@ -1,6 +1,5 @@
 import React ,{useState}from 'react'
-import avatar from '../../assets/profile-1.jpg'
-import CreatPost from '../CreatPost/CreatPost'
+
 import './NavBar.scss'
 import { useSelector ,useDispatch } from 'react-redux'
 import Avatar from '../Avatar/Avatar'
@@ -8,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 export default function NavBar() {
 
-    const avatar = useSelector(state => state.Login.avatar)
+
     const info = useSelector(state => state.Login.info)
 
   return (

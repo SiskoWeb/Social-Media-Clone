@@ -1,7 +1,6 @@
 import React,{useState ,useEffect} from 'react'
 import './CreatPost.scss'
-import avatar from '../../assets/profile-1.jpg'
-import {provider} from '../../firebase/firebase-config'
+
     
 import { useSelector ,useDispatch } from 'react-redux'
 import { ref ,uploadBytes, getDownloadURL  } from "firebase/storage";
@@ -11,34 +10,23 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 
 export default function CreatPost() {
-
+  const avatar = useSelector(state => state.Login.avatar)
     const [imageUploaded ,setImageUploaded] =useState()
-    const [user ,setUser] =useState()
-    const [userId, setUserId] = useState('')  ;
-
-
-const Dispatch =useDispatch()
-
-useEffect(() => {
-
-
-
-  }, [])
-
-    const avatar = useSelector(state => state.Login.avatar)
-    const email = useSelector(state => state.Login.email)
-    const name = useSelector(state => state.Login.name)
-
-
     const [postText ,setPostText] =useState('')
-    const [postImg ,setPostImg] =useState()
+ 
 
-const updateFeed = ()=>{
-    Dispatch({
-        type:'LOADING',
-        data:localStorage.setItem("Loading",!localStorage.getItem("Loading"))
-    })
-}
+
+
+
+
+
+ 
+
+
+  
+
+
+
 
 // single image
 const UploadImg=  async(e)=>{
@@ -48,13 +36,7 @@ const UploadImg=  async(e)=>{
     onAuthStateChanged(auth, async(user) => {
         if (user) {
     
-       
-       
-          setUserId(user.uid)
-
-          localStorage.setItem("isAuth", true);
-    
-          console.log('yes ther is user')
+        // upload post and create collection
           const docRef =  await addDoc(collection(db, "Posts"), {
             avatar:user.photoURL,
         name:user.displayName,
@@ -64,10 +46,8 @@ const UploadImg=  async(e)=>{
           time:serverTimestamp(), 
             },
             console.log('added post text'),
-           
-        
-            )
-        
+          )
+        //upload image
          const imgeref = ref(storage, `1/${imageUploaded.name}`);
          const uploimg = await uploadBytes(imgeref , imageUploaded).then(async()=>{
              const downUrl = await getDownloadURL(imgeref)
@@ -79,22 +59,16 @@ const UploadImg=  async(e)=>{
             removeImgUploaded(),
             setPostText(''),
              )
-             
-        
-          
-            console.log('added post ')
-          
-        
-          await Promise.all(uploimg)
+
+           await Promise.all(uploimg)
         
         
-        
-  
         } else {
-          localStorage.removeItem('isAuth')
+
+       
   
   
-          setUserId('')
+        
           console.log('there is no user')
         }
       });
@@ -105,19 +79,11 @@ const UploadImg=  async(e)=>{
 
 
 
-
-
-
-
 const removeImgUploaded = ()=>{
     setImageUploaded(null)
 }
 
-
-
-
-
-  return (
+return (
 <div className='add-post'>
 <div className='create-post'>
 <div className='create-item1'>

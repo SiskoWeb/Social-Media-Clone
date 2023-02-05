@@ -8,7 +8,7 @@ import Msg from '../../Components/Msg/Msg';
 import '../../Components/FeedCard/FeedCard.scss'
 import './UserPage.scss'
 import '../../App.scss'
-import p from '../../assets/profile-1.jpg'
+
 import cover from '../../assets/bg.jpg'
 import { useSelector } from 'react-redux';
 export default function UserPage() {
@@ -17,14 +17,13 @@ export default function UserPage() {
     const [update, setUpdate] = useState(false)
     const isAuth = useSelector(state => state.Login.name)
     const info = useSelector(state => state.Login.info)
-
     const parmas = useParams()
+
+
+
     useEffect( () =>{
  
-
-
- 
-        const ordersRef =  collection(db, "Posts");
+ const ordersRef =  collection(db, "Posts");
       
         const q = query(ordersRef,orderBy('time', 'desc'))
 const unsbscribe = onSnapshot(q,(querySnapshot)=>{
@@ -38,22 +37,23 @@ const unsbscribe = onSnapshot(q,(querySnapshot)=>{
    
       },[])
 
-console.log(info)
-console.log(userInfo)
+
+
+
+
+
 
   return (
     <div className='body-home'>
+
+
     <SideBar/>
     
- 
-    <div className='feed'>
-<>
+ <div className='feed'>
 
-
-            <div className='profil-card'>
+<div className='profil-card'>
 <div className='cover-profil'><img src={cover}></img></div>
 <div className='profil-text'>  <img className='avatar-profil' src={userInfo.avatar}></img>   <div className='text-info'> <p>{userInfo.name}</p> <p className='userid'>@{userInfo.uid}</p> </div></div>
-
 </div>
 
 
@@ -62,24 +62,16 @@ console.log(userInfo)
     {postsList?.map((o)=> {
 if(o.uid === parmas.id){
     return(
-      
-         
-       
-         <>
-
-
-
-        
-        
         <FeedCard email={o.email} data={o} key={o.id} PostImg={o.image} avatar={o.avatar} name={o.name} time={o.time?.seconds} setUpdate={setUpdate} update={update}/>
-        </>
-)
+           )
 }
 else{
     return null
 }
         
-    })} </></div>
+    })} 
+     </div>
+
     <Msg/>
     </div>
     )

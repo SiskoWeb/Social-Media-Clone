@@ -29,10 +29,16 @@ const deletPost  = async(id)=>{
 
   return (
     <div className='feed-card'>
+    
 <div className='feed-col1'>
+
+
 <Link to={`/${data?.uid}`}>
 <Avatar avatarImg={avatar || p2} name={name || 'Sisko Web'} subText={ currnt === isNaN?'No Time':currnt}  email={email}/>
 </Link>
+
+
+
 {email === localStorage.getItem('email')?<div className='toggle'>
 
 
