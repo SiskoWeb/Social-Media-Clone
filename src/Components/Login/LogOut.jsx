@@ -45,6 +45,6 @@ export default function LogOut() {
     
           },[])
   return (
-    <div>{localStorage.getItem("isAuth")?<a onClick={(e)=>signOut3(e)}>log Out</a>:null}</div>
+    <div className='logout-btn'>{localStorage.getItem("isAuth")?<a onClick={(e)=>signOut3(e)}>Logout</a>:null}</div>
   )
 }

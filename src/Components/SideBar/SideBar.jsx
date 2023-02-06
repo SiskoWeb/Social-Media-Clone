@@ -15,6 +15,7 @@ export default function SideBar() {
   return (
 
 
+
 <div className='sidebar'>
 
 <div className='bar-links'>
@@ -22,6 +23,7 @@ export default function SideBar() {
 <NavLink to="/"><i class="fa-solid fa-house-user"></i><p>Home</p></NavLink>
 <NavLink to="/saved"><i class="fa-solid fa-bookmark"></i><p>Saved</p></NavLink>
 </div>
+{localStorage.getItem("isAuth")? <div className='logout-btn-web'><a><LogOut/></a></div>:null}
 
 </div>
 

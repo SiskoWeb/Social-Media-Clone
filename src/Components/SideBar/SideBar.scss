@@ -1,10 +1,10 @@
 @use "../../Variables" as *;
 
 .sidebar {
-    flex-basis: 20%;
+    flex-basis: 10%;
     background-color: $element-Color;
     border-radius: 15px;
-    height: 300px;
+    height: 105%;
     >a {
         color: black;
     }
@@ -73,13 +73,15 @@
 .logout-btn {
  
     cursor: pointer;
-    margin-top: 10px;
+  
     width: 100%;
     background-color: black;
     display: flex;
     align-items: center;
+    align-items: center;
     justify-content: center;
-    border-radius: 20px;
+   border-bottom-left-radius: 20px;
+   border-bottom-right-radius: 20px;
     transition: all .3s linear;
 
     a {
@@ -88,6 +90,7 @@
         align-items: center;
         justify-content: center;
         padding: 5px;
+        
     }
 }
 
@@ -109,13 +112,14 @@
     .logout-btn {
  
         cursor: pointer;
-        margin-top: 10px;
-        width: 50%;
+        margin-top: 0px;
+        width: 100%;
         background-color: black;
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 20px;
+     
         transition: all .3s linear;
     
         a {
@@ -124,6 +128,7 @@
             align-items: center;
             justify-content: center;
             padding: 5px;
+           i{ display: none;}
         }
     }
     

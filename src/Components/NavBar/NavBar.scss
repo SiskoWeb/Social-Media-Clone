@@ -9,6 +9,10 @@ justify-content: space-around;
 height: 70px;
 font-family: 'Source Sans Pro', sans-serif;
 background-color: $element-Color;
+
+.logout-btn-navbar{
+    display: none;
+}
 .input-search{
     background-color: $bg-Color;
 
@@ -101,5 +105,19 @@ padding: 5px ;
 
 }
     }    
+
+    .btn-and-avatar{
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+        align-items: center;
+        .logout-btn-navbar{
+            display: flex;
+            margin-left: 20px;
+            cursor: pointer;
+            font-family: sans-serif;
+            font-weight: 700;
+        }
+    }
 
 }

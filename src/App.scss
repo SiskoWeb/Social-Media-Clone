@@ -21,10 +21,10 @@
 .body-home{
 display: flex;
 width: 100%;
-justify-content: space-around;
+justify-content: center;
 background-color: #f0edf5;
 position: relative;
-
+gap: 20px;
 }
   
 @media (max-width: 767.98px) {
@@ -35,7 +35,7 @@ position: relative;
     justify-content: space-around;
     background-color: #f0edf5;
     position: relative;
-    gap: 10px;
+    // gap: 30px;
     }
 
   }
