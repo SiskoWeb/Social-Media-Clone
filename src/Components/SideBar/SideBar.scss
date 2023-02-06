@@ -1,28 +1,35 @@
-@use "../../Variables" as * ;
+@use "../../Variables" as *;
 
-.sidebar{
-    flex-basis:  15%;
->a{
-    color: black;
-}
-    // height: 100% !important;
+.sidebar {
+    flex-basis: 20%;
+    background-color: $element-Color;
+    border-radius: 15px;
+    height: 300px;
+    >a {
+        color: black;
+    }
+
+   
     width: 100%;
- display: flex;
- flex-direction: column;
- padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+ 
     gap: 30px;
-    .bar-links{
+
+    .bar-links {
         display: flex;
         flex-direction: column;
         width: 100%;
         align-items: center;
         text-align: start;
         gap: 30px;
-        a{
+       
+
+        a {
             color: black;
             text-decoration: none;
-font-family: 'Source Sans Pro', sans-serif;
-font-weight: 700;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 700;
             display: flex;
             justify-content: flex-start;
             align-items: center;
@@ -30,9 +37,9 @@ font-weight: 700;
             gap: 50px;
             font-size: 18px;
             padding: 20px 10px;
-           
-            i{
-               
+
+            i {
+                padding: 0 20px;
                 cursor: pointer;
                 height: 20px;
                 width: 20px;
@@ -41,43 +48,142 @@ font-weight: 700;
                 justify-content: center;
             }
         }
-        a.active{
-    background-color:$bg-Color;
-    border-radius: 20px;
-    color: $btn-Color;
-    padding: 20px 10px;
+
+        a.active {
+            background-color: $bg-Color;
+   
+    border-top-right-radius: 10px;
+
+            color: $btn-Color;
+            padding: 20px 10px;
+            border: 0.5px solrid $btn-Color
         }
     }
 }
 
 
-.login-bar{
+.login-bar {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 16px;
- 
+
 }
-.logout-btn{
-margin-left: 50px;
-cursor: pointer;
+
+.logout-btn {
+ 
+    cursor: pointer;
     margin-top: 10px;
-    width: 50%;
-    background-color:black;
+    width: 100%;
+    background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 20px;
     transition: all .3s linear;
-a{
-    display: flex;
-    color: white;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-}
-}
-.logout-btn:hover{
-   opacity: 0.5;
 
+    a {
+        display: flex;
+        color: white;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+    }
+}
+
+.logout-btn:hover {
+    opacity: 0.5;
+
+}
+.sidbar-container{
+    flex-basis: 5%;
+    background-color: #ffffff;
+    height: 300px;
+    width: 100%;
+    border-radius: 15px;
+}
+
+
+
+@media (max-width: 767.98px) {
+    .logout-btn {
+ 
+        cursor: pointer;
+        margin-top: 10px;
+        width: 50%;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        transition: all .3s linear;
+    
+        a {
+            display: flex;
+            color: white;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+        }
+    }
+    
+
+    .sidebar {
+        flex-basis: 2%;
+        background-color: $element-Color;
+        border-radius: 15px;
+        height: 300px;
+        max-width: 52%;
+        a p{
+          display: none;  
+        }
+
+
+        i {
+            padding: 0px 0px;
+            cursor: pointer;
+            height: 50%;
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            
+        }
+        a{
+           width:50%;
+ 
+          
+                gap: 50px;
+                font-size: 18px;
+                padding: 0px 0px;
+            
+        }
+    }
+
+    .sidebar .bar-links a {
+        padding: 0px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .sidebar .bar-links a.active {
+        padding: 0px 0px;
+    }
+
+    .sidebar .bar-links a i {
+        padding: 0px 0px;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .sidebar{
+        flex-basis: 5%;
+        background-color: $element-Color;
+        height: 300px;
+        width: 100%;
+        border-radius: 15px;
+        // min-width: 150px;
+    
+    }
 }

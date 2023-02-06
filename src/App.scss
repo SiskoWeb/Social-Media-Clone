@@ -27,3 +27,15 @@ position: relative;
 
 }
   
+@media (max-width: 767.98px) {
+
+  .body-home{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    background-color: #f0edf5;
+    position: relative;
+    gap: 10px;
+    }
+
+  }

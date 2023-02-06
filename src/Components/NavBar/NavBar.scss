@@ -59,3 +59,47 @@ column-gap: 20px;
 
 
 
+@media (max-width: 767.98px) {
+    nav{
+        .btn-and-avatar p{
+       
+               
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+width: 60px;
+        }
+    margin-bottom: 10px;
+
+    height: 70px;
+
+ font-size: 12px;
+ .input-search{
+    background-color: $bg-Color;
+
+ 
+    height: 25px;
+    border-radius: 20px;
+
+display: flex;
+align-items: center;
+column-gap: 20px;
+padding: 5px ;
+  width: 30%;
+
+    input{
+        border: none;
+    width: 30%;
+        background-color: $bg-Color;
+       
+    }
+    input:focus{
+        border: none;
+        outline: none;
+   
+    }
+
+}
+    }    
+
+}

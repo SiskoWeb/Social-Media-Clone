@@ -1,8 +1,8 @@
 import React from 'react'
-import './SideBar.scss'
+import './SideBar2.scss'
 export default function Msg() {
   return (
-    <div className='sidebar'>
+    <div className='sidebar2'>
     
     </div>
   )

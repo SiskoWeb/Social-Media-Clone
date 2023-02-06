@@ -85,3 +85,39 @@ width: 100%;
     left: 5%;
     cursor: pointer;
 }
+
+@media (max-width: 767.98px) {
+    .create-post{
+ 
+        width: 100%;
+    
+
+
+        padding: 5px 10px;
+        column-gap: 5px;
+        background-color: $element-Color;
+        input:focus , input{
+    width: 100%;
+            outline: none;
+            border: none;
+        }
+        img{
+            @include avatar;
+            width:30px !important
+        }
+        .create-btn{
+            background-color: $btn-Color;
+            color: white;
+            border: none;
+            padding:5px 10px;
+            border-radius: 15px;
+            height: 100%;
+            font-size: 10px !important;
+            cursor:pointer;
+            }
+
+    }
+
+ 
+    
+}

@@ -1,0 +1,24 @@
+@use "../../Variables" as * ;
+
+.sidebar2{
+    flex-basis: 20%;
+    background-color: $element-Color;
+    height: 300px;
+    width: 100%;
+    border-radius: 15px;
+    // min-width: 150px;
+
+}
+
+@media (max-width: 767.98px) {
+    .sidebar2{
+        display: none;
+        flex-basis: 5%;
+        background-color: $element-Color;
+        height: 300px;
+        width: 100%;
+        border-radius: 15px;
+        // min-width: 150px;
+    
+    }
+}
